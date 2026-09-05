@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#eeeeec">
+  <title>Birthday Letter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <div class="paper-noise"></div>
+
+    <!-- OPENING -->
+    <section class="screen active" data-screen="home">
+      <div class="opening">
+        <div class="tiny">A LITTLE SURPRISE FOR</div>
+        <h1 id="openTitle">Birthday<br>Wish</h1>
+        <div class="cake">♨</div>
+        <p id="openName">for someone special</p>
+        <button class="pill" onclick="startExperience()">Open ✦</button>
+      </div>
+    </section>
+
+    <!-- CALENDAR / MAIN MENU -->
+    <section class="screen" data-screen="menu">
+      <div class="top-title">Harii</div>
+      <div class="calendar-wrap">
+        <div class="month" id="monthName">Juli</div>
+        <div class="weekdays"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+        <div class="days" id="calendarDays"></div>
+      </div>
+      <p class="choose">Pilih ✦</p>
+      <div class="icon-grid">
+        <button class="icon-btn" onclick="go('letter')" aria-label="Letter">✉</button>
+        <button class="icon-btn" onclick="go('memories')" aria-label="Memories">▣</button>
+        <button class="icon-btn" onclick="go('gift')" aria-label="Gift">🎁</button>
+        <button class="icon-btn" onclick="go('songs')" aria-label="Songs">♫</button>
+        <button class="icon-btn" onclick="go('reasons')" aria-label="Reasons">♥</button>
+        <button class="icon-btn" onclick="go('cake')" aria-label="Birthday cake">♨</button>
+      </div>
+    </section>
+
+    <!-- LETTER -->
+    <section class="screen" data-screen="letter">
+      <h2>Letter for you</h2>
+      <div class="letter-card">
+        <p id="letterText"></p>
+      </div>
+      <button class="back" onclick="go('menu')">Back</button>
+    </section>
+
+    <!-- MEMORIES -->
+    <section class="screen" data-screen="memories">
+      <h2>Our Memories</h2>
+      <div class="photo-book">
+        <div class="photo large"><img id="photo1" src="images/foto1.jpg" alt="Foto 1"></div>
+        <div class="photo"><img id="photo2" src="images/foto2.jpg" alt="Foto 2"></div>
+        <div class="photo"><img id="photo3" src="images/foto3.jpg" alt="Foto 3"></div>
+        <div class="photo wide"><img id="photo4" src="images/foto4.jpg" alt="Foto 4"></div>
+      </div>
+      <p class="caption" id="memoryCaption">A few little memories that I want to keep forever.</p>
+      <button class="back" onclick="go('menu')">Back</button>
+    </section>
+
+    <!-- GIFT -->
+    <section class="screen" data-screen="gift">
+      <h2>For you ♡</h2>
+      <div class="gift-box">
+        <div class="gift-icon">🎁</div>
+        <div class="speech" id="giftText">Congratulations! This little gift is especially for you.</div>
+      </div>
+      <div class="gift-note" id="giftNote">Hadiah kecil ini aku siapkan khusus buat kamu. Semoga kamu suka!</div>
+      <button class="back" onclick="go('menu')">Back</button>
+    </section>
+
+    <!-- SONGS -->
+    <section class="screen" data-screen="songs">
+      <h2>Our Songs</h2>
+      <div class="song-list">
+        <button class="song" onclick="playSong(0)">
+          <img src="images/song1.jpg" alt="">
+          <div><b id="song1Title">Our Song</b><small id="song1Artist">your favorite song</small></div>
+          <span>▶</span>
+        </button>
+        <button class="song" onclick="playSong(1)">
+          <img src="images/song2.jpg" alt="">
+          <div><b id="song2Title">Another Song</b><small id="song2Artist">a song for us</small></div>
+          <span>▶</span>
+        </button>
+      </div>
+      <div class="music-control">
+        <span id="musicStatus">♪ Musik siap diputar</span>
+        <button onclick="toggleMusic()">Play / Pause</button>
+      </div>
+      <button class="back" onclick="go('menu')">Back</button>
+    </section>
+
+    <!-- REASONS -->
+    <section class="screen" data-screen="reasons">
+      <h2>Reasons I Love You</h2>
+      <div class="reasons-card">
+        <ol id="reasonsList"></ol>
+      </div>
+      <button class="back" onclick="go('menu')">Back</button>
+    </section>
+
+    <!-- CAKE -->
+    <section class="screen" data-screen="cake">
+      <h2 id="cakeTitle">Happy Birthday!</h2>
+      <div class="cake-card">
+        <div class="cake-big">🎂</div>
+        <img src="images/foto5.jpg" alt="Birthday photo">
+        <p id="finalMessage">Semoga semua hal baik datang kepadamu. Terima kasih sudah menjadi seseorang yang begitu berarti. ♡</p>
+      </div>
+      <button class="back" onclick="go('menu')">Back</button>
+    </section>
+
+    <audio id="bgMusic" loop preload="auto"></audio>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

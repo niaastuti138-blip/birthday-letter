@@ -1,0 +1,55 @@
+*{box-sizing:border-box}
+:root{
+  --paper:#ecece8;--ink:#151515;--soft:#d8d8d3;--card:#262626;
+}
+html,body{margin:0;width:100%;min-height:100%;font-family:"Trebuchet MS",Arial,sans-serif;background:#d7d7d2;color:var(--ink)}
+body{display:flex;justify-content:center;min-height:100vh}
+button{font:inherit;border:0;cursor:pointer}
+#app{position:relative;width:min(100%,430px);min-height:100vh;overflow:hidden;background:var(--paper)}
+.paper-noise{position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#777 0.55px,transparent .55px);background-size:5px 5px;mix-blend-mode:multiply}
+.screen{display:none;position:relative;min-height:100vh;padding:52px 28px 35px;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:fade .45s ease}
+.screen.active{display:flex}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.opening{width:100%;display:flex;flex-direction:column;align-items:center}
+.tiny{font-size:10px;letter-spacing:4px;margin-bottom:22px}
+h1{font-family:Georgia,serif;font-size:54px;line-height:.9;margin:0 0 20px;font-weight:700}
+h2{font-family:Georgia,serif;font-size:34px;margin:0 0 25px}
+.cake{font-size:46px;line-height:1;margin:4px 0 12px;transform:rotate(-5deg)}
+#openName{font-family:cursive;font-size:23px;margin:0 0 28px}
+.pill,.back{background:#050505;color:white;border-radius:999px;padding:9px 25px;font-size:13px;box-shadow:0 3px 0 rgba(0,0,0,.12)}
+.pill:active,.back:active,.icon-btn:active,.song:active{transform:scale(.96)}
+.top-title{font-family:cursive;font-size:28px;align-self:flex-end;margin-right:12px;margin-bottom:8px}
+.calendar-wrap{width:165px;background:#222;color:#fff;border-radius:20px;padding:18px 14px 15px;box-shadow:0 12px 25px rgba(0,0,0,.12)}
+.month{font-family:cursive;font-size:28px;margin-bottom:8px}
+.weekdays,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;font-size:9px}
+.weekdays{font-weight:bold;margin-bottom:8px}
+.days span{display:flex;align-items:center;justify-content:center;height:15px}
+.days .birthday{border:2px solid #fff;border-radius:50%;height:19px}
+.choose{margin:25px 0 13px;font-size:13px}
+.icon-grid{background:#222;border-radius:25px;padding:15px;display:grid;grid-template-columns:repeat(2,62px);gap:12px}
+.icon-btn{width:62px;height:62px;background:#f7f7f4;border-radius:14px;font-size:31px;box-shadow:inset 0 -2px 0 #ccc;transition:.15s}
+.letter-card{width:100%;max-width:340px;background:#242424;color:#fff;border-radius:25px;padding:25px 21px;text-align:left;line-height:1.5;font-size:12px;box-shadow:0 14px 28px rgba(0,0,0,.14);margin-bottom:22px}
+.photo-book{width:100%;display:grid;grid-template-columns:1.2fr .8fr;gap:10px}
+.photo{height:145px;border-radius:5px;overflow:hidden;background:#c5c5c0;border:5px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.12);transform:rotate(-1deg)}
+.photo:nth-child(2){transform:rotate(2deg)}
+.photo:nth-child(3){transform:rotate(1deg)}
+.photo.wide{grid-column:1/-1;height:125px;transform:rotate(-.5deg)}
+.photo.large{height:190px}
+.photo img,.cake-card img,.song img{width:100%;height:100%;object-fit:cover;display:block}
+.caption{font-size:12px;max-width:300px;line-height:1.5;margin:20px 0}
+.gift-box{position:relative;margin:10px 0 18px}
+.gift-icon{font-size:92px}
+.speech{position:absolute;right:-5px;top:0;background:white;border:2px solid #222;border-radius:8px;padding:10px;width:180px;font-size:10px;line-height:1.4;text-align:left}
+.gift-note{background:white;border:1px solid #222;padding:15px 17px;font-size:11px;line-height:1.5;max-width:300px;margin-bottom:22px}
+.song-list{width:100%;display:flex;flex-direction:column;gap:12px}
+.song{display:flex;align-items:center;gap:12px;background:#292929;color:#fff;border-radius:17px;padding:7px 10px;text-align:left}
+.song img{width:55px;height:55px;border-radius:10px;object-fit:cover}
+.song div{flex:1}.song b,.song small{display:block}.song b{font-size:12px}.song small{font-size:9px;color:#ccc;margin-top:3px}
+.music-control{margin:18px 0;display:flex;align-items:center;gap:10px;font-size:10px}
+.music-control button{background:#fff;border:1px solid #222;border-radius:20px;padding:7px 12px;font-size:10px}
+.reasons-card{background:#fff;border:3px solid #222;border-radius:32px;padding:18px 23px;width:100%;max-width:330px;text-align:left;line-height:1.45;font-size:11px;box-shadow:0 8px 0 rgba(0,0,0,.08)}
+.reasons-card ol{margin:0;padding-left:20px}.reasons-card li{margin:7px 0}
+.cake-card{background:#fff;border:1px solid #222;border-radius:25px;padding:15px;width:100%;max-width:330px}
+.cake-big{font-size:70px;margin:5px}.cake-card img{height:220px;border-radius:16px}.cake-card p{font-size:12px;line-height:1.5}
+.back{margin-top:2px}
+@media(max-height:650px){.screen{padding-top:25px;padding-bottom:20px}.calendar-wrap{transform:scale(.9);margin:-8px 0}.icon-grid{transform:scale(.9);margin:-8px 0}h2{margin-bottom:15px}}
